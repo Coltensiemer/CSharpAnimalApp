@@ -1,0 +1,14 @@
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/bin/Debug/net8.0/CSharpAnimalApp
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/bin/Debug/net8.0/CSharpAnimalApp.deps.json
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/bin/Debug/net8.0/CSharpAnimalApp.runtimeconfig.json
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/bin/Debug/net8.0/CSharpAnimalApp.dll
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/bin/Debug/net8.0/CSharpAnimalApp.pdb
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.AssemblyInfoInputs.cache
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.AssemblyInfo.cs
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.csproj.CoreCompileInputs.cache
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.dll
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/refint/CSharpAnimalApp.dll
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.pdb
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.genruntimeconfig.cache
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/ref/CSharpAnimalApp.dll
