@@ -1,4 +1,12 @@
-﻿string[] animals = ["Cat", "Dog", "Fish", "Bird", "other"];
+﻿using System.Collections;
+using System.Runtime.Serialization;
+
+string[] animals = new string[4];
+
+animals[0] = "cat";
+animals[1] = "dog";
+animals[2] = "fish";
+animals[3] = "other";
 
 string animalID = "";
 string animalType = "";
@@ -28,6 +36,7 @@ for (int i = 0; i < maxPets; i++)
 			animalColor = "";
 			animalHobby = "";
 			break;
+
 		case 1:
 			animalID = "2";
 			animalType = "";
@@ -36,15 +45,22 @@ for (int i = 0; i < maxPets; i++)
 			animalColor = "";
 			animalHobby = "";
 			break;
-		case 2:
-			animalID = "3";
+		case 3:
+			animalID = "";
 			animalType = "";
 			animalName = "";
 			animalAge = "";
 			animalColor = "";
 			animalHobby = "";
 			break;
-
+		case 4:
+			animalID = "";
+			animalType = "";
+			animalName = "";
+			animalAge = "";
+			animalColor = "";
+			animalHobby = "";
+			break;
 		default:
 			animalID = "4";
 			animalType = "Cat";
@@ -75,11 +91,12 @@ do
 	Console.Clear();
 	Console.WriteLine("Tell us about your animal");
 	Console.WriteLine("1. See all Animals");
-	Console.WriteLine("2. Pick your animal type");
-	Console.WriteLine("3. What is your animal's name?");
-	Console.WriteLine("4. How old is your animal?");
-	Console.WriteLine("5. What is the color(s) of your animal?");
-	Console.WriteLine("6. What does your animal like to do?");
+	Console.WriteLine("2. Add another animal");
+	// Console.WriteLine("2. Pick your animal type");
+	// Console.WriteLine("3. What is your animal's name?");
+	// Console.WriteLine("4. How old is your animal?");
+	// Console.WriteLine("5. What is the color(s) of your animal?");
+	// Console.WriteLine("6. What does your animal like to do?");
 	Console.WriteLine("Type 'Exit to end console");
 
 	readResults = Console.ReadLine();
@@ -94,37 +111,73 @@ do
 		case "1":
 			for (int i = 0; i < maxPets; i++)
 			{
-				if (yourAnimal[i,0] != "ID #: "){ 
-				Console.WriteLine(yourAnimal[i, 0]);
-				for ( int j = 0; j < 6; j++); 
+				if (yourAnimal[i, 0] != "ID #: ")
+				{
+					Console.WriteLine(yourAnimal[i, 0]);
+					for (int j = 0; j < 6; j++) ;
 				}
 			}
-			Console.WriteLine("Press Enter to continue."); 
-			readResults = Console.ReadLine(); 
+			Console.WriteLine("Press Enter to continue.");
+			readResults = Console.ReadLine();
 			break;
 		case "2":
-			Console.WriteLine("Errorss");
+			string createPet = "y";
+			int petCount = 0;
+			for (int i = 0; i < maxPets; i++)
+
+			{
+				// checks the number of pets 
+				if (yourAnimal[i, 0] != "ID #: ")
+				{
+					petCount += 1;
+				}
+			}
+
+			if (petCount < maxPets)
+			{
+				Console.WriteLine($"We have {petCount} on file. We can add {(maxPets - petCount)}");
+
+			}
+			while (createPet == "y" && petCount < maxPets)
+			{
+				 Console.WriteLine("Pick your animal:");
+				 
+				 for ( int i = 0; i < animals.Length; i++) { 
+					Console.WriteLine($"{i + 1}." + animals[i]); 
+				 }
+
+
+					readResults = Console.ReadLine(); 
+
+				 bool vaild = false;
+				 do { 
+
+			
+
+				
+
+				 } while (!vaild); 
+
+			}
+
+
+			if (petCount >= maxPets)
+			{
+				Console.WriteLine($"Sorry, we cannot add anymore pets. They are {(petCount - maxPets)}");
+				readResults = Console.ReadLine();
+
+			}
+
+			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
-			Console.WriteLine("Press Enter to continue."); 
 			break;
-		case "3":
-			Console.WriteLine("Error");
-			readResults = Console.ReadLine();
-			Console.WriteLine("Press Enter to continue."); 
-			break;
-		case "4":
-			Console.WriteLine("Error");
-			Console.WriteLine("Press Enter to continue."); 
-			readResults = Console.ReadLine();
-			break;
-		case "5":
-			Console.WriteLine("Error");
-			Console.WriteLine("Press Enter to continue."); 
-			readResults = Console.ReadLine();
-			break;
+
+
+
+/// orginal case switch 
 		default:
 			Console.WriteLine("Default Error");
-			Console.WriteLine("Press Enter to continue."); 
+			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
 

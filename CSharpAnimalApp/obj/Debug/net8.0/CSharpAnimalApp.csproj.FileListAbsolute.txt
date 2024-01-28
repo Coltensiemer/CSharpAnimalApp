@@ -12,3 +12,4 @@
 /Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.pdb
 /Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.genruntimeconfig.cache
 /Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/ref/CSharpAnimalApp.dll
+/Users/coltensiemer/Documents/git-hub/CSharpAnimalApp/CSharpAnimalApp/obj/Debug/net8.0/CSharpAnimalApp.sourcelink.json
