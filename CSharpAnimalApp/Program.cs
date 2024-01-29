@@ -133,33 +133,75 @@ do
 				}
 			}
 
+
 			if (petCount < maxPets)
 			{
 				Console.WriteLine($"We have {petCount} on file. We can add {(maxPets - petCount)}");
 
 			}
 			while (createPet == "y" && petCount < maxPets)
-			{
-				 Console.WriteLine("Pick your animal:");
-				 
-				 for ( int i = 0; i < animals.Length; i++) { 
-					Console.WriteLine($"{i + 1}." + animals[i]); 
-				 }
+
+				/// Picks Animal Type
+				do
+				{
+					Console.WriteLine("Pick your animal:");
 
 
-					readResults = Console.ReadLine(); 
+						for (int i = 0; i < animals.Length; i++)
+						{
+							Console.WriteLine($"{i + 1}." + animals[i]);
+						}
+					
+						readResults = Console.ReadLine();
+						if (readResults != null)
+						{
+							int.TryParse(readResults, out int UserChoice);
 
-				 bool vaild = false;
-				 do { 
+							if (UserChoice >= 1 && UserChoice <= 3)
+							{
+								animalType = animals[UserChoice - 1];
+							}
+							else if (UserChoice == 4)
+							{
+								Console.WriteLine("Enter an animal:"); 
+								readResults = Console.ReadLine(); 
+								if (readResults != null) { 
+									animalType = readResults; 
+								}
+								
+							}				
+							else Console.WriteLine("Not a valid selection. Press Enter to try again.");  
+							
+					}
+						Console.WriteLine($"You Select {animalType}, Press Enter to continue.");
+						readResults = Console.ReadLine();	
 
-			
+				} while (animalType == "");
 
-				
 
-				 } while (!vaild); 
+			/// assigns animal ID once type of animal is picked
+			animalID = animalType.Substring(0, 1) + (petCount + 1).ToString();
 
-			}
+		do { 
+			Console.WriteLine("What is the name of your animal?"); 
+			readResults = Console.ReadLine(); 
 
+			if (readResults != null) { 
+				animalName = readResults; 
+			} 
+
+		} while (animalName == ""); 
+
+
+			yourAnimal[petCount, 0] = "ID #: " + animalID;
+			yourAnimal[petCount, 1] = "Type: " + animalType;
+			yourAnimal[petCount, 5] = "Name: " + animalName;
+			yourAnimal[petCount, 2] = "Age: " + animalAge;
+			yourAnimal[petCount, 4] = "Color: " + animalColor;
+			yourAnimal[petCount, 3] = "Hobby: " + animalHobby;
+
+
+			petCount = petCount + 1;
 
 			if (petCount >= maxPets)
 			{
@@ -168,24 +210,18 @@ do
 
 			}
 
+
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
 
 
 
-/// orginal case switch 
 		default:
 			Console.WriteLine("Default Error");
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
-
 	}
 
-
 } while (menuSelection != "exit");
-
-
-
-
