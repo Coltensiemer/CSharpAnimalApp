@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpAnimalApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd3d025c3d1f8ec3c0bafa484b54dbd175ff091d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e97ce0d66084bf59dbbdc1b05534377c6579cd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpAnimalApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpAnimalApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Runtime.Serialization;
+﻿
+using System.Collections;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 string[] animals = new string[4];
 
@@ -15,6 +17,7 @@ string animalAge = "";
 string animalColor = "";
 string animalHobby = "";
 
+
 int maxPets = 5;
 string? readResults;
 string menuSelection = "";
@@ -28,7 +31,7 @@ for (int i = 0; i < maxPets; i++)
 	switch (i)
 
 	{
-		case 0:
+		case 1:
 			animalID = "";
 			animalType = "";
 			animalName = "";
@@ -37,7 +40,7 @@ for (int i = 0; i < maxPets; i++)
 			animalHobby = "";
 			break;
 
-		case 1:
+		case 2:
 			animalID = "";
 			animalType = "";
 			animalName = "";
@@ -61,10 +64,13 @@ for (int i = 0; i < maxPets; i++)
 			animalColor = "";
 			animalHobby = "";
 			break;
+
+
+
 		default:
 			animalID = "C1";
 			animalType = "Cat";
-			animalName = "Kitty";
+			animalName = "kitty";
 			animalAge = "12";
 			animalColor = "Brown";
 			animalHobby = "Sleep";
@@ -92,11 +98,8 @@ do
 	Console.WriteLine("Tell us about your animal");
 	Console.WriteLine("1. See all Animals");
 	Console.WriteLine("2. Add another animal");
-	// Console.WriteLine("2. Pick your animal type");
-	// Console.WriteLine("3. What is your animal's name?");
-	// Console.WriteLine("4. How old is your animal?");
-	// Console.WriteLine("5. What is the color(s) of your animal?");
-	// Console.WriteLine("6. What does your animal like to do?");
+	Console.WriteLine("3.Edit the data of your pets");
+	Console.WriteLine("4.Filter Search");
 	Console.WriteLine("Type 'Exit to end console");
 
 	readResults = Console.ReadLine();
@@ -114,15 +117,17 @@ do
 				if (yourAnimal[i, 0] != "ID #: ")
 				{
 					Console.WriteLine();
-					for (int j = 0; j < 6; j++) { 
-						Console.WriteLine(yourAnimal[i,j]);
-						
+					for (int j = 0; j < 6; j++)
+					{
+						Console.WriteLine(yourAnimal[i, j]);
+
 					}
 				}
 			}
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
+
 		case "2":
 			string createPet = "y";
 			int petCount = 0;
@@ -282,7 +287,108 @@ do
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
+		/// SELECT AND EDIT PET INFO
+		case "3":
+			string editInfo = "y";
+			string selectedPet = "";
 
+			while (editInfo == "y")
+			{
+				Console.WriteLine($"Select which pet you want to edit.");
+				for (int i = 0; i < maxPets; i++)
+				{
+					if (yourAnimal[i, 0] != "ID #: ")
+					{
+						Console.WriteLine($"{i + 1}: {yourAnimal[i, 0]}, {yourAnimal[i, 2]}");
+
+					}
+				}
+				readResults = Console.ReadLine();
+				do
+				{
+
+					if (readResults != null)
+					{
+						int.TryParse(readResults, out int userChoice);
+
+						if (userChoice <= yourAnimal.Length)
+						{
+							selectedPet = userChoice.ToString();
+						}
+						else
+						{
+							Console.WriteLine($"Must select a known pet");
+
+						}
+					}
+
+				} while (selectedPet != "");
+
+				Console.WriteLine($"Do you want to edit another item? (y/n)");
+				readResults = Console.ReadLine();
+
+				if (readResults != null)
+				{
+					editInfo = readResults.ToLower();
+				}
+			};
+
+
+			Console.WriteLine("Press Enter to continue.");
+			readResults = Console.ReadLine();
+			break;
+
+
+		case "4":
+			string animalSearch = "";
+			bool matchesAnimal = false;
+
+			while (animalSearch == "" && matchesAnimal == false)
+			{
+				Console.WriteLine($"Enter the ID or name of the pet to search.");
+				readResults = Console.ReadLine();
+
+				if (readResults != null)
+				{
+					animalSearch = readResults.ToLower();
+					Console.WriteLine();
+				}
+
+
+
+
+				do
+				{
+
+					for (int i = 0; i < maxPets; i++)
+					{
+						if (yourAnimal[i, 0].Contains(animalSearch) || yourAnimal[i, 2].Contains(animalSearch))
+						{
+							Console.WriteLine($"There are results for {animalSearch}");
+							matchesAnimal = true;
+							break;
+						}
+						else
+						{
+							Console.WriteLine($"There was not result for {animalSearch}. Try Again");
+							readResults = Console.ReadLine();
+							if (readResults != null)
+							{
+								animalSearch = readResults.ToLower();
+							}
+
+						}
+					}
+				} while (matchesAnimal == false);
+
+			}
+
+
+
+			Console.WriteLine("Press Enter to continue.");
+			readResults = Console.ReadLine();
+
+			break;
 
 
 		default:
@@ -293,3 +399,5 @@ do
 	}
 
 } while (menuSelection != "exit");
+
+
