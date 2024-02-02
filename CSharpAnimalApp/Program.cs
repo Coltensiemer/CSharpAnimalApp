@@ -252,10 +252,10 @@ do
 
 				yourAnimal[petCount, 0] = "ID #: " + animalID;
 				yourAnimal[petCount, 1] = "Type: " + animalType;
-				yourAnimal[petCount, 5] = "Name: " + animalName;
-				yourAnimal[petCount, 2] = "Age: " + animalAge;
+				yourAnimal[petCount, 2] = "Name: " + animalName;
+				yourAnimal[petCount, 3] = "Age: " + animalAge;
 				yourAnimal[petCount, 4] = "Color: " + animalColor;
-				yourAnimal[petCount, 3] = "Hobby: " + animalHobby;
+				yourAnimal[petCount, 5] = "Hobby: " + animalHobby;
 
 				// Adds count into a the petcount
 				petCount = petCount + 1;
@@ -338,7 +338,7 @@ do
 			readResults = Console.ReadLine();
 			break;
 
-
+// filter fish info
 		case "4":
 			string animalSearch = "";
 			bool matchesAnimal = false;
@@ -359,31 +359,38 @@ do
 
 				do
 				{
+					
 
 					for (int i = 0; i < maxPets; i++)
 					{
 						if (yourAnimal[i, 0].Contains(animalSearch) || yourAnimal[i, 2].Contains(animalSearch))
 						{
 							Console.WriteLine($"There are results for {animalSearch}");
+
+							if (animalSearch != null)
+							{
+
+
+								Console.WriteLine($"ID: {yourAnimal[i, 0]}");
+								Console.WriteLine($"Type: {yourAnimal[i, 1]}");
+								Console.WriteLine($"Name: {yourAnimal[i, 2]}");
+								Console.WriteLine($"Age: {yourAnimal[i, 3]}");
+								Console.WriteLine($"Color: {yourAnimal[i, 4]}");
+								Console.WriteLine($"Hobby: {yourAnimal[i, 5]}");
+							}
+
+
+
 							matchesAnimal = true;
 							break;
 						}
-						else
-						{
-							Console.WriteLine($"There was not result for {animalSearch}. Try Again");
-							readResults = Console.ReadLine();
-							if (readResults != null)
-							{
-								animalSearch = readResults.ToLower();
-							}
-
-						}
 					}
-				} while (matchesAnimal == false);
+				} while (!matchesAnimal && animalSearch == "");
 
+			if (!matchesAnimal) Console.WriteLine($"There was no animal found for {animalSearch}");
 			}
 
-
+			
 
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
@@ -392,7 +399,7 @@ do
 
 
 		default:
-			Console.WriteLine("Default Error");
+			Console.WriteLine("Not a valid selection");
 			Console.WriteLine("Press Enter to continue.");
 			readResults = Console.ReadLine();
 			break;
